@@ -7,3 +7,4 @@ yarn-error.log*
 lib
 types
 lib_test
+node_modules

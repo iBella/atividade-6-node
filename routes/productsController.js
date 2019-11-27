@@ -19,5 +19,15 @@ module.exports = {
         }
 
         res.json({ success: 'Id received!' })
+    },
+    post(req, res) {
+        if(req.body.price <= 0){
+            return res.json({error: "Product not created - price!" })
+        }
+        if(req.body.description.length < 10 ){
+            return res.json({error: "Product not created - character!" })
+        }
+        products.items.push(req.body)
+        return res.json({success: "Product created!" })
     }
 };
